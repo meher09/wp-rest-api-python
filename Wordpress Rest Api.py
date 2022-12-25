@@ -11,20 +11,20 @@ class WordPressAPI:
         try:
             parsed_url = urllib.parse.urlparse(base_url)
         except ValueError:
-            raise ValueError('base_url is not a valid URL')
+            raise ValueError('Your Website url is not a valid URL')
 
         # Check if base_url starts with https://
-        if not parsed_url.scheme == 'https':
-            raise ValueError('base_url must start with https://')
+        if not parsed_url.scheme == 'http':
+            raise ValueError('Website url must start with http://')
 
         # Check if base_url contains specific domain or subdomain
         if not parsed_url.netloc.endswith('example.com'):
-            raise ValueError('base_url must contain example.com domain or subdomain')
+            raise ValueError('Website url must contain example.com domain or subdomain')
 
         # Check if base_url is reachable
         response = requests.get(base_url)
         if response.status_code != 200:
-            raise ValueError('base_url is not reachable')
+            raise ValueError('Website url is not reachable')
 
         # Remove trailing slash from base_url if it exists
         if base_url[-1] == '/':
