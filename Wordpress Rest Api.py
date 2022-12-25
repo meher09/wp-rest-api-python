@@ -6,6 +6,14 @@ import urllib.parse
 class WordPressAPI:
 
     def __init__(self, base_url, username, password):
+        """Initialize a WordPressAPI object.
+
+        Args:
+            base_url (str): The base URL of the WordPress site.
+            username (str): The username for authenticating with the WordPress REST API.
+            password (str): The password for authenticating with the WordPress REST API.
+        """
+
         # Check if base_url is a valid URL
         try:
             parsed_url = urllib.parse.urlparse(base_url)
@@ -15,8 +23,6 @@ class WordPressAPI:
         # Check if base_url starts with https://
         if not parsed_url.scheme == 'https':
             raise ValueError('Website url must start with http://')
-
-
 
         # Check if base_url is reachable
         response = requests.get(base_url)
@@ -36,5 +42,3 @@ class WordPressAPI:
             'comments': '/wp-json/wp/v2/comments',
             'media': '/wp-json/wp/v2/media',
         }
-
-
