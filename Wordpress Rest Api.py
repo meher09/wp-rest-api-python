@@ -3,7 +3,6 @@ import base64
 import urllib.parse
 
 
-
 class WordPressAPI:
 
     def __init__(self, base_url, username, password):
@@ -14,12 +13,10 @@ class WordPressAPI:
             raise ValueError('Your Website url is not a valid URL')
 
         # Check if base_url starts with https://
-        if not parsed_url.scheme == 'http':
+        if not parsed_url.scheme == 'https':
             raise ValueError('Website url must start with http://')
 
-        # Check if base_url contains specific domain or subdomain
-        if not parsed_url.netloc.endswith('example.com'):
-            raise ValueError('Website url must contain example.com domain or subdomain')
+
 
         # Check if base_url is reachable
         response = requests.get(base_url)
@@ -32,7 +29,7 @@ class WordPressAPI:
         self.base_url = base_url
         token = base64.b64encode(f'{username}:{password}'.encode())
         self.headers = {'Authorization': f'Basic {token.decode("utf-8")}'}
-        
+
         self.endpoints = {
             'posts': '/wp-json/wp/v2/posts',
             'users': '/wp-json/wp/v2/users',
@@ -40,9 +37,9 @@ class WordPressAPI:
             'media': '/wp-json/wp/v2/media',
         }
 
-    
-    
 
-
-
-
+username = 'admin'
+password = '123 456 789 0123'
+website = 'https://www.mywpsite.com'
+api = WordPressAPI(website, username, password)
+print(api.endpoints['posts'])
