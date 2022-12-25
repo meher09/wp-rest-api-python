@@ -32,6 +32,16 @@ class WordPressAPI:
         self.base_url = base_url
         token = base64.b64encode(f'{username}:{password}'.encode())
         self.headers = {'Authorization': f'Basic {token.decode("utf-8")}'}
+        
+        self.endpoints = {
+            'posts': '/wp-json/wp/v2/posts',
+            'users': '/wp-json/wp/v2/users',
+            'comments': '/wp-json/wp/v2/comments',
+            'media': '/wp-json/wp/v2/media',
+        }
+
+    
+    
 
 
 
