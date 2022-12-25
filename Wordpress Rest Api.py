@@ -20,10 +20,10 @@ class WordPressAPI:
         except ValueError:
             raise ValueError('Your Website url is not a valid URL')
 
-        # Check if base_url starts with https://
-        if not parsed_url.scheme == 'https':
-            raise ValueError('Website url must start with http://')
 
+        if not parsed_url.scheme in ['http', 'https']:
+            raise ValueError('base_url must start with http:// or https://')
+        
         # Check if base_url is reachable
         response = requests.get(base_url)
         if response.status_code != 200:
