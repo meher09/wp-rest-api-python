@@ -1,0 +1,8 @@
+setup.py
+Wordpress_Rest_Api/Wordpress_Rest_Api.py
+Wordpress_Rest_Api/__init__.py
+Wordpress_Rest_Api.egg-info/PKG-INFO
+Wordpress_Rest_Api.egg-info/SOURCES.txt
+Wordpress_Rest_Api.egg-info/dependency_links.txt
+Wordpress_Rest_Api.egg-info/requires.txt
+Wordpress_Rest_Api.egg-info/top_level.txt

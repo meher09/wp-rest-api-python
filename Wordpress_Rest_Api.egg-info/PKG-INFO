@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: Wordpress-Rest-Api
+Version: 0.0.0.1
+Summary: A package for interacting with the WordPress REST API
+Home-page: https://github.com/meher09/wp-rest-api-python
+Author: Meher Nigar
+Author-email: mehernigarcu@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# Wordpress Rest Api
+
+
+```python
+username = 'admin'   
+password = '123 456 789 0123'   
+website = 'https://www.mywpsite.com'
+api = WordPressAPI(website, username, password)
+```
+
+## How to get different endpoints
+
+```python
+posts_url = api.endpoints['posts']  # '/wp-json/wp/v2/posts'
+```
+
